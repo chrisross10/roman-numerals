@@ -1,8 +1,9 @@
 class RomanNumerals
+  def initialize(rules)
+    @rules = rules
+  end
+
   def convert(input)
-    if (input == 1)
-      return 'i'
-    end
-    return 'ii'
+    @rules[input]
   end
 end
