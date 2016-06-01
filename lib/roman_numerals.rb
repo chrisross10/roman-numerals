@@ -1,9 +1,10 @@
 class RomanNumerals
-  def initialize(rules)
-    @rules = rules
-  end
-
   def convert(input)
-    @rules[input]
+    rn = ''
+    until 1 > input
+      rn += 'i'
+      input -= 1
+    end
+    return rn
   end
 end
