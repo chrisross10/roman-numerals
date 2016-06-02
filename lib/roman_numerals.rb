@@ -11,7 +11,6 @@ class RomanNumerals
         output += value
         result -= key
       end
-      break if result == 0
     end
     output
   end
