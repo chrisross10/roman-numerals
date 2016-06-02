@@ -1,6 +1,6 @@
 class RomanNumerals
   def initialize(rules)
-    @rules = rules.sort_by {|k,v| v}.reverse.to_h
+    @rules = rules.sort_by {|k,v| v.to_i}.reverse.to_h
   end
 
   def convert(arabic)
@@ -10,7 +10,6 @@ class RomanNumerals
       while result >= key do
         output += value
         result -= key
-        puts 'appending... ' + ', ' + output + ', ' + value + ', ' + result.to_s + ', ' + key.to_s
       end
       break if result == 0
     end
