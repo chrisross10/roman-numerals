@@ -1,18 +1,18 @@
 class RomanNumerals
   def initialize(rules)
-    @rules = rules
+    @rules = rules.sort_by {|k,v| v}.reverse.to_h
   end
 
-  def convert(input)
+  def convert(arabic)
     output = ''
-    if (@rules.key?(input))
-      output = @rules[input]
-      return output
+    @rules.each do |key, value|
+      result = arabic
+      while result >= key do
+        output += value
+        result -= key
+      end
+      break if result == 0
     end
-    until 1 > input
-      output += 'i'
-      input -= 1
-    end
-    return output
+    output
   end
 end
