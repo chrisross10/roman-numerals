@@ -5,11 +5,12 @@ class RomanNumerals
 
   def convert(arabic)
     output = ''
+    result = arabic
     @rules.each do |key, value|
-      result = arabic
       while result >= key do
         output += value
         result -= key
+        puts 'appending... ' + ', ' + output + ', ' + value + ', ' + result.to_s + ', ' + key.to_s
       end
       break if result == 0
     end

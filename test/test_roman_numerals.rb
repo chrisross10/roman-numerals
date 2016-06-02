@@ -10,5 +10,6 @@ describe 'roman_numerals' do
     RomanNumerals.new(rules).convert(3).must_equal 'iii'
     RomanNumerals.new(rules).convert(4).must_equal 'iv'
     RomanNumerals.new(rules).convert(5).must_equal 'v'
+    RomanNumerals.new(rules).convert(6).must_equal 'vi'
   end
 end
