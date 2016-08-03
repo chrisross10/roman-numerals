@@ -1,7 +1,4 @@
-FROM ruby:2.2.3
-
+FROM ruby:alpine
 COPY Gemfile .
-
 RUN bundle install
-
 COPY . .
